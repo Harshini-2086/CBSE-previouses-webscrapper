@@ -1,0 +1,694 @@
+13:39:48  INFO      ╔══════════════════════════════════════════════════════════╗
+13:39:48  INFO         CBSE Class 10 Paper Downloader  — starting
+13:39:48  INFO         Years   : 2013 → 2026
+13:39:48  INFO         Subjects: Mathematics, Science, English, Social_Studies, Information_Technology, Hindi
+13:39:48  INFO         Output  : C:\Users\harsh\OneDrive\Documents\Board Exam
+13:39:48  INFO         Dry run : False
+13:39:48  INFO      ╚══════════════════════════════════════════════════════════╝
+13:39:48  INFO      ══════════════════════════════════════════════════════════════
+13:39:48  INFO        SOURCE A — cbse.gov.in/cbsenew  (2022–2026)
+13:39:48  INFO      ══════════════════════════════════════════════════════════════
+13:39:53  INFO        ── Year 2022
+13:39:53  INFO           QP links found: 104   MS links found: 41
+13:39:55  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Compartment\Question_Paper
+13:39:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Compartment\Question_Paper\MATHEMATICS_BASIC.zip
+13:40:02  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Question_Paper
+13:40:02  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Question_Paper\Math_B.zip
+13:40:35  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/marking-scheme/2023-COMPTT/X/Mathematics_Basic.zip
+13:41:12  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Marking_Scheme
+13:41:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Marking_Scheme\Mathematics_Basic.zip
+13:41:22  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Compartment\Question_Paper
+13:41:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Compartment\Question_Paper\_Home_Science.zip
+13:41:57  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/question-paper/2022/X/Home_Science.zip
+13:42:20  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Question_Paper
+13:42:20  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Question_Paper\Home_Science.zip
+13:43:09  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Marking_Scheme
+13:43:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Marking_Scheme\Science.zip
+13:43:20  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Compartment\Question_Paper
+13:43:20  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Compartment\Question_Paper\English_language_and_Literature.zip
+13:43:24  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Question_Paper
+13:43:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Question_Paper\English_&_Lit.zip
+13:43:55  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/marking-scheme/2023-COMPTT/X/English_Lan_Lit.zip
+13:44:18  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Marking_Scheme
+13:44:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Marking_Scheme\English_Lan_Lit.zip
+13:44:22  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Compartment\Question_Paper
+13:44:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Compartment\Question_Paper\SOCIAL_SCIENCE.zip
+13:44:27  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Question_Paper
+13:44:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Question_Paper\SST.zip
+13:44:30  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Marking_Scheme
+13:44:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Marking_Scheme\Social_Science.zip
+13:44:56  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Compartment\Question_Paper
+13:44:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Compartment\Question_Paper\INFORMATION_TECHNOLOGY.zip
+13:45:21  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Question_Paper
+13:45:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Question_Paper\Information Technology.zip
+13:45:26  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Marking_Scheme
+13:45:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Marking_Scheme\Information_Technology.zip
+13:45:27  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Compartment\Question_Paper
+13:45:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Compartment\Question_Paper\HINDI_A.zip
+13:46:03  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Question_Paper
+13:46:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Question_Paper\Hindi_A.zip
+13:46:27  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Marking_Scheme
+13:46:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Marking_Scheme\Hindi_Course_A.zip
+13:46:32  INFO        ── Year 2023
+13:46:32  INFO           QP links found: 107   MS links found: 29
+13:46:33  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Compartment\Question_Paper
+13:46:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Compartment\Question_Paper\Maths_Basic.zip
+13:46:44  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Question_Paper
+13:46:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Question_Paper\MATHEMATICS_BASIC.zip
+13:47:17  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/Marking-Scheme/2023/X/Maths_Standard.zip
+13:48:14  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Marking_Scheme
+13:48:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Marking_Scheme\Maths_Standard.zip
+13:48:22  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Compartment\Question_Paper
+13:48:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Compartment\Question_Paper\Home_Science.zip
+13:48:56  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/question-paper/2023/X/106_Data_Science.zip
+13:49:00  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Question_Paper
+13:49:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Question_Paper\106_Data_Science.zip
+13:49:28  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Marking_Scheme
+13:49:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Marking_Scheme\Home_Science.zip
+13:49:34  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Compartment\Question_Paper
+13:49:34  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Compartment\Question_Paper\English_Lan_Lit.zip
+13:49:37  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Main\Question_Paper
+13:49:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Main\Question_Paper\English_Language_Literature.zip
+13:49:42  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Compartment\Question_Paper
+13:49:42  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Compartment\Question_Paper\Social_Science.zip
+13:49:50  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Question_Paper
+13:49:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Question_Paper\SOCIAL_SCIENCE.zip
+13:53:46  INFO      ╔══════════════════════════════════════════════════════════╗
+13:53:46  INFO         CBSE Class 10 Paper Downloader  — starting
+13:53:46  INFO         Years   : 2013 → 2026
+13:53:46  INFO         Subjects: Mathematics, Science, English, Social_Studies, Information_Technology, Hindi
+13:53:46  INFO         Output  : C:\Users\harsh\OneDrive\Documents\Board Exam
+13:53:46  INFO         Dry run : False
+13:53:46  INFO      ╚══════════════════════════════════════════════════════════╝
+13:53:46  INFO      ══════════════════════════════════════════════════════════════
+13:53:46  INFO        SOURCE A — cbse.gov.in/cbsenew  (2022–2026)
+13:53:46  INFO      ══════════════════════════════════════════════════════════════
+13:54:04  INFO      ╔══════════════════════════════════════════════════════════╗
+13:54:04  INFO         CBSE Class 10 Paper Downloader  — starting
+13:54:04  INFO         Years   : 2013 → 2026
+13:54:04  INFO         Subjects: Mathematics, Science, English, Social_Studies, Information_Technology, Hindi
+13:54:04  INFO         Output  : C:\Users\harsh\OneDrive\Documents\Board Exam
+13:54:04  INFO         Dry run : False
+13:54:04  INFO      ╚══════════════════════════════════════════════════════════╝
+13:54:04  INFO      ══════════════════════════════════════════════════════════════
+13:54:04  INFO        SOURCE A — cbse.gov.in/cbsenew  (2022–2026)
+13:54:04  INFO      ══════════════════════════════════════════════════════════════
+13:54:08  INFO        ── Year 2022
+13:54:08  INFO           QP links found: 104   MS links found: 41
+13:54:11  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Compartment\Question_Paper
+13:54:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Compartment\Question_Paper\MATHEMATICS_BASIC.zip
+13:54:16  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Question_Paper
+13:54:16  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Question_Paper\Math_B.zip
+13:54:21  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Marking_Scheme
+13:54:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Main\Marking_Scheme\Mathematics_Basic.zip
+13:54:31  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Compartment\Question_Paper
+13:54:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Compartment\Question_Paper\_Home_Science.zip
+13:54:35  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Question_Paper
+13:54:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Question_Paper\Home_Science.zip
+13:54:43  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Marking_Scheme
+13:54:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Main\Marking_Scheme\Science.zip
+13:54:54  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Compartment\Question_Paper
+13:54:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Compartment\Question_Paper\English_language_and_Literature.zip
+13:54:58  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Question_Paper
+13:54:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Question_Paper\English_&_Lit.zip
+13:55:00  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Marking_Scheme
+13:55:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Main\Marking_Scheme\English_Lan_Lit.zip
+13:55:06  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Compartment\Question_Paper
+13:55:06  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Compartment\Question_Paper\SOCIAL_SCIENCE.zip
+13:55:14  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Question_Paper
+13:55:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Question_Paper\SST.zip
+13:55:17  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Marking_Scheme
+13:55:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Main\Marking_Scheme\Social_Science.zip
+13:55:22  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Compartment\Question_Paper
+13:55:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Compartment\Question_Paper\INFORMATION_TECHNOLOGY.zip
+13:55:24  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Question_Paper
+13:55:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Question_Paper\Information Technology.zip
+13:55:25  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Marking_Scheme
+13:55:25  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2022\Main\Marking_Scheme\Information_Technology.zip
+13:55:27  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Compartment\Question_Paper
+13:55:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Compartment\Question_Paper\HINDI-B.zip
+13:55:30  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Question_Paper
+13:55:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Question_Paper\Hindi_B.zip
+13:55:34  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Marking_Scheme
+13:55:34  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Main\Marking_Scheme\Hindi_B.zip
+13:55:35  INFO        ── Year 2023
+13:55:35  INFO           QP links found: 107   MS links found: 29
+13:55:37  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Compartment\Question_Paper
+13:55:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Compartment\Question_Paper\Maths_Basic.zip
+13:55:49  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Question_Paper
+13:55:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Question_Paper\MATHEMATICS_BASIC.zip
+13:55:55  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Marking_Scheme
+13:55:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Main\Marking_Scheme\Maths_Standard.zip
+13:55:59  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Compartment\Question_Paper
+13:55:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Compartment\Question_Paper\Home_Science.zip
+13:56:03  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Question_Paper
+13:56:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Question_Paper\106_Data_Science.zip
+13:56:09  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Marking_Scheme
+13:56:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Main\Marking_Scheme\Home_Science.zip
+13:56:15  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Compartment\Question_Paper
+13:56:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Compartment\Question_Paper\English_Lan_Lit.zip
+13:56:19  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Main\Question_Paper
+13:56:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Main\Question_Paper\English_Language_Literature.zip
+13:56:23  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Compartment\Question_Paper
+13:56:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Compartment\Question_Paper\Social_Science.zip
+13:56:32  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Question_Paper
+13:56:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Question_Paper\SOCIAL_SCIENCE.zip
+13:56:40  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Marking_Scheme
+13:56:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Main\Marking_Scheme\Social_Science_English_Medium.zip
+13:57:03  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Compartment\Question_Paper
+13:57:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Compartment\Question_Paper\Information_Technology.zip
+13:57:05  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Main\Question_Paper
+13:57:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Main\Question_Paper\89_Information_Technology.zip
+13:57:30  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Main\Marking_Scheme
+13:57:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2023\Main\Marking_Scheme\Information_Technology.zip
+13:57:32  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Compartment\Question_Paper
+13:57:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Compartment\Question_Paper\Hindi_B.zip
+13:57:37  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Main\Question_Paper
+13:57:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Main\Question_Paper\HINDI_B.zip
+13:57:38  INFO        ── Year 2024
+13:57:38  INFO           QP links found: 105   MS links found: 36
+13:58:09  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Compartment\Question_Paper
+13:58:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Compartment\Question_Paper\MATHEMATICS_BASIC.zip
+13:58:18  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Main\Question_Paper
+13:58:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Main\Question_Paper\MATHEMATICS_BASIC.zip
+13:58:51  WARNING   Timeout on attempt 1/3: https://www.cbse.gov.in/cbsenew/marking-scheme/2024-COMPTT/X/Maths_Basic.zip
+13:59:14  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Main\Marking_Scheme
+13:59:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Main\Marking_Scheme\Maths_Basic.zip
+13:59:23  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Compartment\Question_Paper
+13:59:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Compartment\Question_Paper\Home_Science.zip
+13:59:28  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Main\Question_Paper
+13:59:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Main\Question_Paper\Data_Science.zip
+13:59:44  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Main\Marking_Scheme
+13:59:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Main\Marking_Scheme\Science.zip
+13:59:51  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Compartment\Question_Paper
+13:59:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Compartment\Question_Paper\ENGLISH_L&L.zip
+13:59:59  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Main\Question_Paper
+13:59:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Main\Question_Paper\ENGLISH_L&L.zip
+14:00:01  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Main\Marking_Scheme
+14:00:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Main\Marking_Scheme\English.zip
+14:00:05  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Compartment\Question_Paper
+14:00:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Compartment\Question_Paper\SOCIAL_SCIENCE.zip
+14:00:13  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Main\Question_Paper
+14:00:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Main\Question_Paper\SOCIAL_SCIENCE.zip
+14:00:20  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Main\Marking_Scheme
+14:00:20  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Main\Marking_Scheme\Social_Science.zip
+14:00:24  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2024\Main\Question_Paper
+14:00:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2024\Main\Question_Paper\Information_Technology.zip
+14:00:28  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2024\Main\Marking_Scheme
+14:00:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2024\Main\Marking_Scheme\Information_Technology.zip
+14:00:30  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Compartment\Question_Paper
+14:00:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Compartment\Question_Paper\HINDI_B.zip
+14:00:36  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Main\Question_Paper
+14:00:36  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Main\Question_Paper\HINDI_B.zip
+14:00:37  INFO        ── Year 2025
+14:00:38  INFO           QP links found: 120   MS links found: 121
+14:00:38  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Compartment\Question_Paper
+14:00:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Compartment\Question_Paper\Maths_Basic.zip
+14:00:49  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Main\Question_Paper
+14:00:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Main\Question_Paper\241_Mathematics_Basic.zip
+14:00:58  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Main\Marking_Scheme
+14:00:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Main\Marking_Scheme\MATHEMATICS_BASIC.zip
+14:01:04  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Compartment\Question_Paper
+14:01:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Compartment\Question_Paper\Home_Science.zip
+14:01:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Question_Paper\106_Data_Science.pdf
+14:01:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Question_Paper\108_Foundation_Skills_for_Sciences_H_E.pdf
+14:01:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Question_Paper\37_Home_Science.pdf
+14:01:19  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Marking_Scheme
+14:01:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Marking_Scheme\HOME_SCIENCE.zip
+14:01:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Marking_Scheme\X_419_MS_DATa_Science.pdf
+14:01:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Marking_Scheme\X_421_MS_Foundation_Skill_Science.pdf
+14:01:29  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Main\Marking_Scheme\X_064_MS_Home_Science_English_Medium.pdf
+14:01:34  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Compartment\Question_Paper
+14:01:34  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Compartment\Question_Paper\English_L&L.zip
+14:01:40  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Main\Question_Paper
+14:01:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Main\Question_Paper\184_English_Language_and_Literature.zip
+14:01:42  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Main\Marking_Scheme
+14:01:42  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Main\Marking_Scheme\ENGLISH_LANGUAGE_LITERATURE.zip
+14:01:44  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Compartment\Question_Paper
+14:01:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Compartment\Question_Paper\Social_Science.zip
+14:01:53  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Main\Question_Paper
+14:01:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Main\Question_Paper\087_Social_Science.zip
+14:02:10  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Main\Marking_Scheme
+14:02:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Main\Marking_Scheme\SOCIAL_SCIENCE.zip
+14:02:13  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Compartment\Question_Paper
+14:02:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Compartment\Question_Paper\Information_Technology.zip
+14:02:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Main\Question_Paper\89_Information_Technology.pdf
+14:02:17  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Main\Marking_Scheme
+14:02:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Main\Marking_Scheme\INFORMATION_TECHNOLOGY.zip
+14:02:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2025\Main\Marking_Scheme\X_402_MS_Information_Technology.pdf
+14:02:21  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Compartment\Question_Paper
+14:02:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Compartment\Question_Paper\Hindi_Course_B.zip
+14:03:38  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Main\Question_Paper
+14:03:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Main\Question_Paper\085_Hindi_Course_B.zip
+14:03:40  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Main\Marking_Scheme
+14:03:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Main\Marking_Scheme\HIND_COURSE_B.zip
+14:03:42  INFO        ── Year 2026
+14:03:42  INFO           QP links found: 81   MS links found: 82
+14:03:54  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Main\Question_Paper
+14:03:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Main\Question_Paper\Mathematics_Standard.zip
+14:04:01  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Main\Marking_Scheme
+14:04:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Main\Marking_Scheme\241_MATHEMATICS_BASIC.zip
+14:04:09  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Main\Question_Paper
+14:04:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Main\Question_Paper\Data_Science.zip
+14:04:18  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Main\Marking_Scheme
+14:04:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Main\Marking_Scheme\419_DATA_SCIENCE.zip
+14:04:29  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Main\Question_Paper
+14:04:29  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Main\Question_Paper\English_Language_Literature.zip
+14:04:32  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Main\Marking_Scheme
+14:04:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Main\Marking_Scheme\184_ENGLISH_LANGUAGE_AND_LITERATURE.zip
+14:04:43  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Main\Question_Paper
+14:04:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Main\Question_Paper\Social_Science.zip
+14:04:53  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Main\Marking_Scheme
+14:04:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Main\Marking_Scheme\087_SOCIAL_SCIENCE.zip
+14:04:55  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2026\Main\Question_Paper
+14:04:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2026\Main\Question_Paper\Information_Technology.zip
+14:04:59  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2026\Main\Marking_Scheme
+14:04:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2026\Main\Marking_Scheme\402_INFORMATION_TECHNOLOGY.zip
+14:05:04  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Main\Question_Paper
+14:05:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Main\Question_Paper\Hindi_Course_B_UPD.zip
+14:05:07  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Main\Marking_Scheme
+14:05:07  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Main\Marking_Scheme\085_HINDI_COURSE-B.zip
+14:05:09  INFO      ══════════════════════════════════════════════════════════════
+14:05:09  INFO        SOURCE B — cbse.gov.in/newsite_old  (2013–2021)
+14:05:09  INFO      ══════════════════════════════════════════════════════════════
+14:05:10  INFO        ── Year 2013
+14:05:13  INFO           Main/Question_Paper: 0 links
+14:05:14  INFO           Main/Marking_Scheme: 0 links
+14:05:16  INFO           Compartment/Question_Paper: 0 links
+14:05:18  INFO           Compartment/Marking_Scheme: 0 links
+14:05:18  INFO        ── Year 2014
+14:05:20  INFO           Main/Question_Paper: 0 links
+14:05:23  INFO           Main/Marking_Scheme: 0 links
+14:05:24  INFO           Compartment/Question_Paper: 0 links
+14:05:27  INFO           Compartment/Marking_Scheme: 0 links
+14:05:27  INFO        ── Year 2015
+14:05:29  INFO           Main/Question_Paper: 0 links
+14:05:31  INFO           Main/Marking_Scheme: 0 links
+14:05:33  INFO           Compartment/Question_Paper: 0 links
+14:05:35  INFO           Compartment/Marking_Scheme: 0 links
+14:05:35  INFO        ── Year 2016
+14:05:37  INFO           Main/Question_Paper: 0 links
+14:05:38  INFO           Main/Marking_Scheme: 19 links
+14:05:40  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2016\Main\Marking_Scheme
+14:05:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2016\Main\Marking_Scheme\Maths.zip
+14:05:43  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Main\Marking_Scheme
+14:05:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Main\Marking_Scheme\SCIENCE_DELHI.zip
+14:05:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Main\Marking_Scheme\SCIENCE_BLIND.PDF
+14:06:03  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Main\Marking_Scheme
+14:06:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Main\Marking_Scheme\sst delhi.zip
+14:06:23  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2016\Main\Marking_Scheme
+14:06:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2016\Main\Marking_Scheme\English Lang. & Lit.zip
+14:06:27  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Main\Marking_Scheme
+14:06:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Main\Marking_Scheme\FIT.zip
+14:06:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Main\Marking_Scheme\Informatiion_Technology.pdf
+14:06:33  INFO           Compartment/Question_Paper: 0 links
+14:06:35  INFO           Compartment/Marking_Scheme: 0 links
+14:06:35  INFO        ── Year 2017
+14:06:37  INFO           Main/Question_Paper: 0 links
+14:06:38  INFO           Main/Marking_Scheme: 6 links
+14:06:40  WARNING   Bad ZIP saved raw: C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Main\Marking_Scheme\Mathematics.rar
+14:06:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Main\Marking_Scheme\Mathematics.rar
+14:06:54  WARNING   Bad ZIP saved raw: C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Main\Marking_Scheme\Science.rar
+14:06:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Main\Marking_Scheme\Science.rar
+14:07:00  WARNING   Bad ZIP saved raw: C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Main\Marking_Scheme\Social Science.rar
+14:07:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Main\Marking_Scheme\Social Science.rar
+14:07:03  WARNING   Bad ZIP saved raw: C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Main\Marking_Scheme\English Lang. & Lit.rar
+14:07:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Main\Marking_Scheme\English Lang. & Lit.rar
+14:07:05  WARNING   Bad ZIP saved raw: C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Main\Marking_Scheme\Found. of Inform. Tech.rar
+14:07:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Main\Marking_Scheme\Found. of Inform. Tech.rar
+14:07:09  INFO           Compartment/Question_Paper: 0 links
+14:07:10  INFO           Compartment/Marking_Scheme: 5 links
+14:07:12  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Compartment\Marking_Scheme
+14:07:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Compartment\Marking_Scheme\Mathematics.zip
+14:07:31  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Compartment\Marking_Scheme
+14:07:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Compartment\Marking_Scheme\Science.zip
+14:07:47  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Compartment\Marking_Scheme
+14:07:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Compartment\Marking_Scheme\Social Science.zip
+14:07:56  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Compartment\Marking_Scheme
+14:07:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Compartment\Marking_Scheme\English Language & Literature.zip
+14:07:58  INFO        ── Year 2018
+14:07:59  INFO           Main/Question_Paper: 6 links
+14:08:15  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Main\Question_Paper
+14:08:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Main\Question_Paper\Maths.zip
+14:08:32  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Main\Question_Paper
+14:08:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Main\Question_Paper\Science.zip
+14:09:07  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Main\Question_Paper
+14:09:07  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Main\Question_Paper\Social Science.zip
+14:09:12  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Main\Question_Paper
+14:09:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Main\Question_Paper\FIT.zip
+14:09:15  INFO           Main/Marking_Scheme: 7 links
+14:09:23  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Main\Marking_Scheme
+14:09:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Main\Marking_Scheme\Mathematics.zip
+14:09:34  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Main\Marking_Scheme
+14:09:34  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Main\Marking_Scheme\SCIENCE.zip
+14:09:44  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Main\Marking_Scheme
+14:09:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Main\Marking_Scheme\SOCIAL SCIENCE.zip
+14:09:48  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Main\Marking_Scheme
+14:09:48  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Main\Marking_Scheme\ENG LIT & LNG.zip
+14:09:52  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Main\Marking_Scheme
+14:09:52  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Main\Marking_Scheme\FIT.zip
+14:09:55  INFO           Compartment/Question_Paper: 4 links
+14:10:17  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Compartment\Question_Paper
+14:10:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Compartment\Question_Paper\maths.zip
+14:10:47  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Compartment\Question_Paper
+14:10:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Compartment\Question_Paper\science.zip
+14:11:21  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Compartment\Question_Paper
+14:11:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Compartment\Question_Paper\social_science.zip
+14:11:25  INFO           Compartment/Marking_Scheme: 5 links
+14:11:28  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Compartment\Marking_Scheme
+14:11:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Compartment\Marking_Scheme\MATHS.zip
+14:11:39  WARNING   Unexpected error (1/3): https://www.cbse.gov.in/curric~1/qpms2018/comptt/ms_10/SCIENCE.zip — Error -3 while decompressing data: invalid distance code
+14:11:42  WARNING   Unexpected error (2/3): https://www.cbse.gov.in/curric~1/qpms2018/comptt/ms_10/SCIENCE.zip — Error -3 while decompressing data: invalid distance code
+14:11:46  WARNING   Unexpected error (3/3): https://www.cbse.gov.in/curric~1/qpms2018/comptt/ms_10/SCIENCE.zip — Error -3 while decompressing data: invalid distance code
+14:11:53  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Compartment\Marking_Scheme
+14:11:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Compartment\Marking_Scheme\SOCIAL SCIENCE.zip
+14:11:56  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Compartment\Marking_Scheme
+14:11:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Compartment\Marking_Scheme\ENG_LAN_LIT.zip
+14:11:57  INFO        ── Year 2019
+14:11:59  INFO           Main/Question_Paper: 0 links
+14:12:01  INFO           Main/Marking_Scheme: 0 links
+14:12:03  INFO           Compartment/Question_Paper: 0 links
+14:12:04  INFO           Compartment/Marking_Scheme: 0 links
+14:12:04  INFO        ── Year 2020
+14:12:06  INFO           Main/Question_Paper: 9 links
+14:12:11  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Main\Question_Paper
+14:12:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Main\Question_Paper\(English L&L).zip
+14:12:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2020\Main\Question_Paper\Information Technology.pdf
+14:12:47  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Main\Question_Paper
+14:12:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Main\Question_Paper\HINDI-B.zip
+14:12:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Main\Question_Paper\Home Science.pdf
+14:14:24  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Main\Question_Paper
+14:14:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Main\Question_Paper\Mathematics (Basic).zip
+14:14:54  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Main\Question_Paper
+14:14:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Main\Question_Paper\Social Science.zip
+14:14:57  INFO           Main/Marking_Scheme: 10 links
+14:14:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Main\Marking_Scheme\HOME SCIENCE.pdf
+14:15:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2020\Main\Marking_Scheme\INFORMATION TECHNOLOGY (402) MARKING SCHEME.pdf
+14:15:16  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Main\Marking_Scheme
+14:15:16  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Main\Marking_Scheme\MATHEMATICS_BASIC_CLASS_X.zip
+14:16:30  INFO      ✓  ZIP extracted → C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Main\Marking_Scheme
+14:16:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Main\Marking_Scheme\SOCIAL_SCIENCE_(HINDI_VERSION).zip
+14:16:36  INFO           Compartment/Question_Paper: 0 links
+14:16:38  INFO           Compartment/Marking_Scheme: 0 links
+14:16:38  INFO        ── Year 2021
+14:16:40  INFO           Main/Question_Paper: 0 links
+14:16:42  INFO           Main/Marking_Scheme: 0 links
+14:16:44  INFO           Compartment/Question_Paper: 0 links
+14:16:46  INFO           Compartment/Marking_Scheme: 0 links
+14:16:46  INFO      ══════════════════════════════════════════════════════════════
+14:16:46  INFO        SOURCE C — cbseacademic.nic.in  Sample Papers  (2014–2026)
+14:16:46  INFO      ══════════════════════════════════════════════════════════════
+14:16:46  INFO        ── Year 2014  → https://cbseacademic.nic.in/SQP_CLASSX_2013_14.html
+14:16:48  WARNING        No SQP page found for 2014
+14:16:48  INFO        ── Year 2015  → https://cbseacademic.nic.in/SQP_CLASSX_2014_15.html
+14:16:49  WARNING        No SQP page found for 2015
+14:16:49  INFO        ── Year 2016  → https://cbseacademic.nic.in/SQP_CLASSX_2015_16.html
+14:16:51  INFO           Found 19 subject rows
+14:16:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:16:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:16:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:16:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:16:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:17:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:17:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:17:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:17:06  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:17:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:17:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2016\Sample_Paper\Question_Paper\Final-SQP2.pdf
+14:17:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2016\Sample_Paper\Marking_Scheme\Final-SMS2.pdf
+14:17:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2016\Sample_Paper\Question_Paper\FIT SQP (2015-16) Set 2.pdf
+14:17:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2016\Sample_Paper\Question_Paper\Hindi b X.pdf
+14:17:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2016\Sample_Paper\Question_Paper\SQP Maths set -II class X.pdf
+14:17:36  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Question_Paper\Science_SQP_II_2016_final.pdf
+14:17:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Marking_Scheme\Science_MS_II_2016_final.pdf
+14:17:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Question_Paper\Social Science SQP _2015-16_ Set 2.pdf
+14:17:42  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2016\Sample_Paper\Marking_Scheme\Social Science SQP _2015-16_ Set 2 MS.pdf
+14:17:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Sample_Paper\Question_Paper\Social Science SQP _2015-16_ Set 2.pdf
+14:17:45  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2016\Sample_Paper\Marking_Scheme\Social Science SQP _2015-16_ Set 2 MS.pdf
+14:17:50  INFO        ── Year 2017  → https://cbseacademic.nic.in/SQP_CLASSX_2016_17.html
+14:17:51  INFO           Found 20 subject rows
+14:17:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:17:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:17:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:17:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:17:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:18:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:18:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:18:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:18:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:18:06  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:18:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2017\Sample_Paper\Question_Paper\X-URDUCOURSE B.pdf
+14:18:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2017\Sample_Paper\Marking_Scheme\Sindhi_XMS.pdf
+14:18:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Question_Paper\Sci_SQP_II_X.pdf
+14:18:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Marking_Scheme\Sci_MS_II_X.pdf
+14:18:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Sample_Paper\Question_Paper\SQP-Eng. lang. & literature X 2016-17.pdf
+14:18:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2017\Sample_Paper\Marking_Scheme\MS Eng. lang. & literature X 2016-17.pdf
+14:18:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Sample_Paper\Question_Paper\FIT (2016-17) SQP.pdf
+14:18:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2017\Sample_Paper\Marking_Scheme\FIT (2016-17) MS.pdf
+14:18:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2017\Sample_Paper\Question_Paper\Hindi-B Class X QP.pdf
+14:18:42  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2017\Sample_Paper\Marking_Scheme\Hindi-B Class X MS.pdf
+14:18:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Question_Paper\HS-SQP X SA II(Second set).pdf
+14:18:45  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Marking_Scheme\HS-MS X SA II(Second set).pdf
+14:18:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2017\Sample_Paper\Question_Paper\SQP-Mathametics-Class-X.pdf
+14:18:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Question_Paper\SQP of Social Science SQP (2016-17).pdf
+14:18:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2017\Sample_Paper\Marking_Scheme\MS 1 of Social Science SQP (2016-17).pdf
+14:18:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Sample_Paper\Question_Paper\SQP of Social Science SQP (2016-17).pdf
+14:18:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2017\Sample_Paper\Marking_Scheme\MS 1 of Social Science SQP (2016-17).pdf
+14:18:57  INFO        ── Year 2018  → https://cbseacademic.nic.in/SQP_CLASSX_2017_18.html
+14:18:59  INFO           Found 20 subject rows
+14:18:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2018\Sample_Paper\Question_Paper\Urdub_SQP.pdf
+14:19:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2018\Sample_Paper\Marking_Scheme\Urdub_MS.pdf
+14:19:41  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Question_Paper\Science_SQP.pdf
+14:19:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Marking_Scheme\Science_MS.pdf
+14:19:45  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Sample_Paper\Question_Paper\English_Lang_Lit_SQP.pdf
+14:19:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2018\Sample_Paper\Marking_Scheme\English_Lang_Lit_MS.pdf
+14:19:48  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Sample_Paper\Question_Paper\FIT-SQP.pdf
+14:19:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2018\Sample_Paper\Marking_Scheme\FIT-MS.pdf
+14:19:52  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2018\Sample_Paper\Question_Paper\Hindi-B-SQP.pdf
+14:19:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2018\Sample_Paper\Marking_Scheme\Hindi-B-MS.pdf
+14:19:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Question_Paper\Home_Sc_SQP.pdf
+14:19:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Marking_Scheme\Home_Sc_MS.pdf
+14:19:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Sample_Paper\Question_Paper\Maths_SQP.pdf
+14:20:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2018\Sample_Paper\Marking_Scheme\Maths_MS.pdf
+14:20:02  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Question_Paper\SS_SQP.pdf
+14:20:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2018\Sample_Paper\Marking_Scheme\SS_MS.pdf
+14:20:06  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Sample_Paper\Question_Paper\SS_SQP.pdf
+14:20:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2018\Sample_Paper\Marking_Scheme\SS_MS.pdf
+14:20:09  INFO        ── Year 2019  → https://cbseacademic.nic.in/SQP_CLASSX_2018_19.html
+14:20:11  INFO           Found 20 subject rows
+14:20:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:16  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:20  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2019\Sample_Paper\Question_Paper\X-URDU-B_SQP_2018-19.pdf
+14:20:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2019\Sample_Paper\Marking_Scheme\X-URDU-B_MS_2018-19.pdf
+14:20:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Question_Paper\X_Science_SQP_2018-19.pdf
+14:20:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Marking_Scheme\X_Science_MS_2018-19.pdf
+14:20:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2019\Sample_Paper\Question_Paper\X-English_LANG_LIT_SQP_2019.pdf
+14:20:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2019\Sample_Paper\Marking_Scheme\X-English_LANG_LIT_MS_2019.pdf
+14:20:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2019\Sample_Paper\Question_Paper\X-FIT_SQP 2018-19.pdf
+14:21:00  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Information_Technology\2019\Sample_Paper\Marking_Scheme\X-FIT_MS-2018-19.pdf
+14:21:02  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2019\Sample_Paper\Question_Paper\X-Hindi-B_SQP_2018-19.pdf
+14:21:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2019\Sample_Paper\Marking_Scheme\X-Hindi-B_MS_2018-19.pdf
+14:21:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Question_Paper\X-Home_Science_SQP-2018-19.pdf
+14:21:07  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Marking_Scheme\X-Home_Science_MS-2018-19.pdf
+14:21:09  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2019\Sample_Paper\Question_Paper\X-Maths_SQP_2018-19.pdf
+14:21:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2019\Sample_Paper\Marking_Scheme\X-Maths_MS_2018-19.pdf
+14:21:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Question_Paper\X-SS_SQP_2018-19.pdf
+14:21:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2019\Sample_Paper\Marking_Scheme\X-SS_MS_2018-19.pdf
+14:21:16  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2019\Sample_Paper\Question_Paper\X-SS_SQP_2018-19.pdf
+14:21:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2019\Sample_Paper\Marking_Scheme\X-SS_MS_2018-19.pdf
+14:21:20  INFO        ── Year 2020  → https://cbseacademic.nic.in/SQP_CLASSX_2019_20.html
+14:21:21  INFO           Found 18 subject rows
+14:21:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Question_Paper\UrduB_SQP.pdf
+14:21:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Marking_Scheme\UrduB_MS.pdf
+14:21:25  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Question_Paper\UrduB_SQP.pdf
+14:21:27  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Marking_Scheme\UrduB_MS.pdf
+14:21:29  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Sample_Paper\Question_Paper\UrduB_SQP.pdf
+14:21:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Sample_Paper\Marking_Scheme\UrduB_MS.pdf
+14:21:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Sample_Paper\Question_Paper\UrduB_SQP.pdf
+14:21:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Sample_Paper\Marking_Scheme\UrduB_MS.pdf
+14:21:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Sample_Paper\Question_Paper\UrduB_SQP.pdf
+14:21:39  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Sample_Paper\Marking_Scheme\UrduB_MS.pdf
+14:21:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Question_Paper\Science_SQP.pdf
+14:21:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Marking_Scheme\Science_MS.pdf
+14:21:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Sample_Paper\Question_Paper\English-LL_SQP.pdf
+14:22:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2020\Sample_Paper\Marking_Scheme\English-LL_MS.pdf
+14:22:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Sample_Paper\Question_Paper\HindiB_SQP.pdf
+14:22:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2020\Sample_Paper\Marking_Scheme\HindiB_MS.pdf
+14:22:06  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Question_Paper\HomeScience_SQP.pdf
+14:22:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Marking_Scheme\HomeScience_MS.pdf
+14:22:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Question_Paper\MathematicsBasic_SQP.pdf
+14:22:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Marking_Scheme\MathematicsBasic_MS.pdf
+14:22:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Question_Paper\MathematicsStandard_SQP.pdf
+14:22:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2020\Sample_Paper\Marking_Scheme\MathematicsStandard_MS.pdf
+14:22:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Question_Paper\SocialScience_SQP.pdf
+14:22:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2020\Sample_Paper\Marking_Scheme\SocialScience_MS.pdf
+14:22:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Sample_Paper\Question_Paper\SocialScience_SQP.pdf
+14:22:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2020\Sample_Paper\Marking_Scheme\SocialScience_MS.pdf
+14:22:24  INFO        ── Year 2021  → https://cbseacademic.nic.in/SQP_CLASSX_2020_21.html
+14:22:26  WARNING        No SQP page found for 2021
+14:22:26  INFO        ── Year 2022  → https://cbseacademic.nic.in/SQP_CLASSX_2021-22.html
+14:22:27  INFO           Found 18 subject rows
+14:22:29  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Question_Paper\UrduB-SQP_Term2.pdf
+14:22:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Marking_Scheme\UrduB-MS_Term2.pdf
+14:22:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Question_Paper\UrduB-SQP_Term2.pdf
+14:22:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Marking_Scheme\UrduB-MS_Term2.pdf
+14:22:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Sample_Paper\Question_Paper\UrduB-SQP_Term2.pdf
+14:22:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Sample_Paper\Marking_Scheme\UrduB-MS_Term2.pdf
+14:22:46  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Sample_Paper\Question_Paper\UrduB-SQP_Term2.pdf
+14:22:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Sample_Paper\Marking_Scheme\UrduB-MS_Term2.pdf
+14:22:52  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Sample_Paper\Question_Paper\UrduB-SQP_Term2.pdf
+14:22:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Sample_Paper\Marking_Scheme\UrduB-MS_Term2.pdf
+14:23:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Question_Paper\Science-SQP_Term2.pdf
+14:23:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Marking_Scheme\Science-MS_Term2.pdf
+14:23:16  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Sample_Paper\Question_Paper\EnglishL-SQP_Term2.pdf
+14:23:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2022\Sample_Paper\Marking_Scheme\EnglishL-MS_Term2.pdf
+14:23:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Sample_Paper\Question_Paper\HindiCourseB-SQP_Term2.pdf
+14:23:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2022\Sample_Paper\Marking_Scheme\HindiCourseB-MS_Term2.pdf
+14:23:22  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Question_Paper\HomeScience-SQP_Term2.pdf
+14:23:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Marking_Scheme\HomeScience-MS_Term2.pdf
+14:23:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Question_Paper\MathsBasic-SQP_Term2.pdf
+14:23:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Marking_Scheme\MathsBasic-MS_Term2.pdf
+14:23:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Question_Paper\MathsStandard-SQP_Term2.pdf
+14:23:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2022\Sample_Paper\Marking_Scheme\MathsStandard-MS_Term2.pdf
+14:23:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Question_Paper\SocialScience-SQP_Term2.pdf
+14:23:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2022\Sample_Paper\Marking_Scheme\SocialScience-MS_Term2.pdf
+14:23:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Sample_Paper\Question_Paper\SocialScience-SQP_Term2.pdf
+14:23:39  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2022\Sample_Paper\Marking_Scheme\SocialScience-MS_Term2.pdf
+14:23:40  INFO        ── Year 2023  → https://cbseacademic.nic.in/SQP_CLASSX_2022-23.html
+14:23:42  INFO           Found 18 subject rows
+14:23:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:23:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:23:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:23:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:23:56  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:23:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:24:02  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:24:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:24:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:24:11  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:24:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Question_Paper\Science-SQP.pdf
+14:24:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Marking_Scheme\Science-MS.pdf
+14:24:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Sample_Paper\Question_Paper\EnglishL-SQP.pdf
+14:24:34  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2023\Sample_Paper\Marking_Scheme\EnglishL-MS.pdf
+14:24:36  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Sample_Paper\Question_Paper\HindiCourseB-SQP.pdf
+14:24:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2023\Sample_Paper\Marking_Scheme\HindiCourseB-MS.pdf
+14:24:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Question_Paper\HomeScience-SQP.pdf
+14:24:42  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Marking_Scheme\HomeScience-MS.pdf
+14:24:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Question_Paper\MathsBasic-SQP.pdf
+14:24:45  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Marking_Scheme\MathsBasic-MS.pdf
+14:24:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Question_Paper\MathsStandard-SQP.pdf
+14:24:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2023\Sample_Paper\Marking_Scheme\MathsStandard-MS.pdf
+14:24:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:24:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2023\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:24:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:24:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2023\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:24:59  INFO        ── Year 2024  → https://cbseacademic.nic.in/SQP_CLASSX_2023-24.html
+14:25:00  INFO           Found 20 subject rows
+14:25:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:25:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:25:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:25:07  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:25:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:25:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:25:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:25:14  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:25:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:25:20  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:25:37  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Question_Paper\Science-SQP.pdf
+14:25:39  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Marking_Scheme\Science-MS.pdf
+14:25:41  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Sample_Paper\Question_Paper\EnglishL-SQP.pdf
+14:25:43  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2024\Sample_Paper\Marking_Scheme\EnglishL-MS.pdf
+14:25:45  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Sample_Paper\Question_Paper\HindiCourseB-SQP.pdf
+14:25:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2024\Sample_Paper\Marking_Scheme\HindiCourseB-MS.pdf
+14:25:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Question_Paper\HomeScience-SQP.pdf
+14:25:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Marking_Scheme\HomeScience-MS.pdf
+14:25:52  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Question_Paper\MathsBasic-SQP.pdf
+14:25:54  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Marking_Scheme\MathsBasic-MS.pdf
+14:25:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Question_Paper\MathsStandard-SQP.pdf
+14:25:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2024\Sample_Paper\Marking_Scheme\MathsStandard-MS.pdf
+14:26:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:26:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2024\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:26:04  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:26:07  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2024\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:26:08  WARNING   HTTP 404: https://cbseacademic.nic.in/web_material/SQP/ClassX_2023_24/SocialScienceHi-SQP.pdf
+14:26:11  WARNING   HTTP 404: https://cbseacademic.nic.in/web_material/SQP/ClassX_2023_24/SocialScienceHi-MS.pdf
+14:26:13  WARNING   HTTP 404: https://cbseacademic.nic.in/web_material/SQP/ClassX_2023_24/SocialScienceHi-SQP.pdf
+14:26:15  WARNING   HTTP 404: https://cbseacademic.nic.in/web_material/SQP/ClassX_2023_24/SocialScienceHi-MS.pdf
+14:26:16  INFO        ── Year 2025  → https://cbseacademic.nic.in/SQP_CLASSX_2024-25.html
+14:26:19  INFO           Found 20 subject rows
+14:26:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:26:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:26:31  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:26:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:26:40  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:26:44  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:26:47  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:26:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:26:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:26:58  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:27:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Question_Paper\Science-SQP.pdf
+14:27:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Marking_Scheme\Science-MS.pdf
+14:27:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Sample_Paper\Question_Paper\EnglishL-SQP.pdf
+14:27:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2025\Sample_Paper\Marking_Scheme\EnglishL-MS.pdf
+14:27:23  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Sample_Paper\Question_Paper\HindiCourseB-SQP.pdf
+14:27:25  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2025\Sample_Paper\Marking_Scheme\HindiCourseB-MS.pdf
+14:27:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Question_Paper\HomeScience-SQP.pdf
+14:27:28  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Marking_Scheme\HomeScience-MS.pdf
+14:27:30  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Question_Paper\MathsBasic-SQP.pdf
+14:27:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Marking_Scheme\MathsBasic-MS.pdf
+14:27:33  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Question_Paper\MathsBasicVIC-SQP.pdf
+14:27:35  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Marking_Scheme\MathsBasicVIC-MS.pdf
+14:27:38  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Question_Paper\MathsStandard-SQP.pdf
+14:27:50  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Marking_Scheme\MathsStandard-MS.pdf
+14:27:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Question_Paper\MathsStandardVIC-SQP.pdf
+14:27:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2025\Sample_Paper\Marking_Scheme\MathsStandardVIC-MS.pdf
+14:27:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:27:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2025\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:28:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:28:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2025\Sample_Paper\Marking_Scheme\SocialScience-MS.pdf
+14:28:04  INFO        ── Year 2026  → https://cbseacademic.nic.in/SQP_CLASSX_2025-26.html
+14:28:06  INFO           Found 18 subject rows
+14:28:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:28:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:28:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:28:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:28:18  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:28:21  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:28:24  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:28:26  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:28:29  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Sample_Paper\Question_Paper\UrduB-SQP.pdf
+14:28:32  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Sample_Paper\Marking_Scheme\UrduB-MS.pdf
+14:28:49  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Question_Paper\Science-SQP.pdf
+14:28:51  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Marking_Scheme\Science-MS_hi.pdf
+14:28:53  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Sample_Paper\Question_Paper\EnglishL-SQP.pdf
+14:28:55  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\English\2026\Sample_Paper\Marking_Scheme\EnglishL-MS.pdf
+14:28:57  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Sample_Paper\Question_Paper\HindiCourseB-SQP.pdf
+14:28:59  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Hindi\2026\Sample_Paper\Marking_Scheme\HindiCourseB-MS.pdf
+14:29:01  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Question_Paper\HomeScience-SQP.pdf
+14:29:03  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Marking_Scheme\HomeScience-MS_hi.pdf
+14:29:05  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Question_Paper\MathsBasic-SQP.pdf
+14:29:08  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Marking_Scheme\MathsBasic-MS.pdf
+14:29:10  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Question_Paper\MathsStandard-SQP.pdf
+14:29:12  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Mathematics\2026\Sample_Paper\Marking_Scheme\MathsStandard-MS.pdf
+14:29:13  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:29:15  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Science\2026\Sample_Paper\Marking_Scheme\SocialScience-MS_hi.pdf
+14:29:17  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Sample_Paper\Question_Paper\SocialScience-SQP.pdf
+14:29:19  INFO      ✓  C:\Users\harsh\OneDrive\Documents\Board Exam\Social_Studies\2026\Sample_Paper\Marking_Scheme\SocialScience-MS_hi.pdf
