@@ -1,4 +1,4 @@
-# CBSE Class 10 Paper Downloader — Complete Guide
+### CBSE Class 10 Paper Downloader
 
 > **Downloads** question papers + marking schemes for **Mathematics, Science,
 > English, Social Studies, Information Technology, and Hindi** (2010 – 2025)
@@ -14,11 +14,10 @@
 5. [How to Run](#5-how-to-run)
 6. [Output Folder Structure](#6-output-folder-structure)
 7. [Troubleshooting](#7-troubleshooting)
-8. [Ethical & Legal Note](#8-ethical--legal-note)
 
 ---
 
-## 1. Project Directory Layout
+### 1. Project Directory Layout
 
 Before you run anything, your project folder should look like this:
 
