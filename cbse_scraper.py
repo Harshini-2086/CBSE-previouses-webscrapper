@@ -166,6 +166,8 @@ def subject_matches(subject_key: str, text: str, url: str = "", year: int = None
     """
     Return True when the given text (and optionally the file URL) belongs to
     `subject_key`. Maps pre-2020 generic Mathematics to Mathematics_Standard.
+    Handles flexible variations for Hindi-B and English while rejecting Hindi-A 
+    and English Communicative.
     """
     cfg  = SUBJECTS[subject_key]
     code = cfg["code"]
@@ -186,7 +188,6 @@ def subject_matches(subject_key: str, text: str, url: str = "", year: int = None
         if subject_key == "Mathematics_Basic":
             return False  # Basic did not exist before 2020
         if subject_key == "Mathematics_Standard":
-            # Prior to 2020, it was just called "Mathematics" or "Maths"
             if "mathematics" in norm_text or "math" in norm_text:
                 return True
 
@@ -198,13 +199,42 @@ def subject_matches(subject_key: str, text: str, url: str = "", year: int = None
         return True
 
     # ── Tier 2: name match (fallback) ───────────────────────────────────────
-    norm_name = normalize(name)
-    if norm_name in norm_text:
-        if subject_key == "Science":
-            excluded_prefixes = ["home", "data", "computer", "environmental","Foundational Skills for"]
-            if any(prefix in norm_text for prefix in excluded_prefixes):
-                return False
-        return True
+    # 1. Custom handling for Hindi Course-B
+    if subject_key == "Hindi_Course_B":
+        # Strict rejection for Course A forms unless Course B is explicitly mentioned on the same line
+        if ("hindi a" in norm_text or "course a" in norm_text) and not ("hindi b" in norm_text or "course b" in norm_text):
+            return False
+        
+        # Accept common variations for Course B
+        hindi_b_variants = ["hindi b", "hindi course b", "hindi course-b"]
+        if any(variant in norm_text for variant in hindi_b_variants):
+            return True
+
+    # 2. Custom handling for English Language & Literature
+    elif subject_key == "English_Language_Literature":
+        # Strict rejection for English Communicative
+        if "communicative" in norm_text:
+            return False
+            
+        # Accept common variations for Language & Literature
+        english_variants = [
+            "english language & literature", 
+            "english language", 
+            "english literature", 
+            "english lang & lit"
+        ]
+        if any(variant in norm_text for variant in english_variants):
+            return True
+
+    # 3. Default fallback for all other subjects (Science, Social Science, IT)
+    else:
+        norm_name = normalize(name)
+        if norm_name in norm_text:
+            if subject_key == "Science":
+                excluded_prefixes = ["home", "data", "computer", "environmental","Foundational Skills for"]
+                if any(prefix in norm_text for prefix in excluded_prefixes):
+                    return False
+            return True
 
     return False
 
