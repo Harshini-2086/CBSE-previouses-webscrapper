@@ -1,5 +1,5 @@
 """
-CBSE Class 10 Paper Downloader  v2.0
+CBSE Class 10 Paper Downloader  v3.0
 =====================================
 Downloads question papers + marking schemes for Class 10 core subjects
 across three CBSE portals:
@@ -8,13 +8,19 @@ across three CBSE portals:
   SOURCE B  2013–2021  cbse.gov.in/newsite_old/examination.html  (hub → sub-pages)
   SOURCE C  2014–2026  cbseacademic.nic.in/sqp_archive.html      (Sample Question Papers)
 
-Subjects: Mathematics, Science, English, Social Studies,
-          Information Technology, Hindi
+Subjects (with official CBSE codes):
+  184  English Language & Literature
+  085  Hindi Course-B
+  041  Mathematics Standard
+  241  Mathematics Basic
+  086  Science
+  087  Social Science
+  402  Information Technology
 
 Usage:
   python cbse_scraper.py                            # all subjects, 2013–2026
   python cbse_scraper.py --years 2022 2023 2024     # specific years
-  python cbse_scraper.py --subjects Mathematics     # specific subject
+  python cbse_scraper.py --subjects Mathematics_Standard Mathematics_Basic
   python cbse_scraper.py --dry-run                  # discover links, no download
   python cbse_scraper.py --delay 2.0                # slower/polite pace
 """
@@ -28,50 +34,64 @@ import logging
 from io import BytesIO
 from pathlib import Path
 from urllib.parse import urljoin, urlparse, unquote, quote
+import shutil
+import tempfile
 
 import requests
 from bs4 import BeautifulSoup
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# CONFIGURATION — edit here if you need to tweak behaviour
+# CONFIGURATION
 # ═══════════════════════════════════════════════════════════════════════════════
 
-BASE_OUTPUT_DIR = Path("CBSE_Papers")   # root folder for all downloads
-REQUEST_DELAY   = 1.5                   # seconds between HTTP requests (be polite)
-TIMEOUT         = 30                    # per-request timeout in seconds
-MAX_RETRIES     = 3                     # retry failed requests up to this many times
+BASE_OUTPUT_DIR = Path("CBSE_Papers")
+REQUEST_DELAY   = 1.5
+TIMEOUT         = 30
+MAX_RETRIES     = 3
 
-# ─── Subject filter keywords ───────────────────────────────────────────────────
-# Keys   = folder names created on disk
-# Values = lowercase substrings matched against the subject text on each page
-SUBJECTS = {
-    "Mathematics": [
-        "mathematics", "maths basic", "maths standard",
-        "mathematics basic", "mathematics standard",
-        "mathematics (basic)", "mathematics (standard)",
-        "041_mathematics", "241_mathematics",
-    ],
-    "Science": [
-        "science",
-        "086_science",
-    ],
-    "English": [
-        "english language", "english literature",
-        "english (language", "english l&l",
-         "184_english",
-    ],
-    "Social_Studies": [
-        "social science", "social studies",
-        "087_social",
-    ],
-    "Information_Technology": [
-        "information technology",
-        "89_information", "402",
-    ],
-    "Hindi": [
-        "hindi b", "hindi course b",
-        "085_hindi",
-    ],
+# ─── Subject definitions ───────────────────────────────────────────────────────
+# Each entry has:
+#   "code" : official CBSE subject code — PRIMARY match criterion
+#   "name" : official subject name      — SECONDARY (fallback) match criterion
+#
+# Matching priority (see subject_matches()):
+#   1. Code found as a whole token in the text OR in the file URL  → match
+#   2. Normalised subject name found anywhere in the text           → match
+#   3. Neither found                                                → no match
+#
+# WHY codes first?  CBSE pages and file names consistently embed the three-digit
+# code (e.g. "041_Mathematics_Standard.zip", "Subject Code: 041") while the
+# human-readable subject name varies in punctuation and spacing across pages.
+
+SUBJECTS: dict[str, dict] = {
+    "English_Language_Literature": {
+        "code": "184",
+        "name": "english language & literature",
+    },
+    "Hindi_Course_B": {
+        "code": "085",
+        "name": "hindi course-b",
+    },
+    "Mathematics_Standard": {
+        "code": "041",
+        "name": "mathematics standard",
+    },
+    "Mathematics_Basic": {
+        "code": "241",
+        "name": "mathematics basic",
+    },
+    "Science": {
+        "code": "086",
+        "name": "science",
+    },
+    "Social_Science": {
+        "code": "087",
+        "name": "social science",
+    },
+    "Information_Technology": {
+        "code": "402",
+        "name": "information technology",
+    },
 }
 
 # ─── Source URLs ──────────────────────────────────────────────────────────────
@@ -101,14 +121,78 @@ log = logging.getLogger(__name__)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def normalize(s: str) -> str:
-    """Lowercase + collapse whitespace."""
-    return re.sub(r"\s+", " ", s.lower().strip())
+    """Lowercase, collapse whitespace, normalise common punctuation variants."""
+    s = s.lower().strip()
+    s = re.sub(r"\s+", " ", s)
+    # Normalise "lang. & lit.", "lang & lit", "language and literature" → uniform
+    s = s.replace("&amp;", "&").replace(" and ", " & ")
+    return s
 
 
-def subject_matches(subject: str, text: str) -> bool:
-    """Return True if any keyword for `subject` appears in `text`."""
-    t = normalize(text)
-    return any(normalize(kw) in t for kw in SUBJECTS[subject])
+# def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
+#     """
+#     Return True when the given text (and optionally the file URL) belongs to
+#     `subject_key`.
+
+#     Priority:
+#       1. Subject CODE found as a whole token in `text` OR in the URL path.
+#          A "whole token" means the code is surrounded by non-digit characters
+#          (prevents '087' matching inside '1087').
+#       2. Normalised subject NAME is a substring of normalised `text`.
+
+#     This two-tier approach avoids false positives from broad keyword lists
+#     while still handling pages that omit the code.
+#     """
+#     cfg  = SUBJECTS[subject_key]
+#     code = cfg["code"]
+#     name = cfg["name"]
+
+#     # ── Tier 1: code match ──────────────────────────────────────────────────
+#     # Check in display text
+#     code_pattern = rf"(?<!\d){re.escape(code)}(?!\d)"
+#     if re.search(code_pattern, text):
+#         return True
+#     # Check in URL path (e.g. "041_Mathematics_Standard.zip")
+#     if url and re.search(code_pattern, urlparse(url).path):
+#         return True
+
+#     # ── Tier 2: name match (fallback) ───────────────────────────────────────
+#     if normalize(name) in normalize(text):
+#         return True
+
+#     return False
+
+def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
+    """
+    Return True when the given text (and optionally the file URL) belongs to
+    `subject_key`.
+    """
+    cfg  = SUBJECTS[subject_key]
+    code = cfg["code"]
+    name = cfg["name"]
+
+    # ── Tier 1: code match ──────────────────────────────────────────────────
+    # Check in display text
+    code_pattern = rf"(?<!\d){re.escape(code)}(?!\d)"
+    if re.search(code_pattern, text):
+        return True
+    # Check in URL path (e.g. "041_Mathematics_Standard.zip")
+    if url and re.search(code_pattern, urlparse(url).path):
+        return True
+
+    # ── Tier 2: name match (fallback) ───────────────────────────────────────
+    norm_text = normalize(text)
+    norm_name = normalize(name)
+    
+    if norm_name in norm_text:
+        # Prevent "Science" from greedily matching other types of science
+        if subject_key == "Science":
+            excluded_prefixes = ["home", "data", "computer", "environmental","Foundational Skills for"]
+            if any(prefix in norm_text for prefix in excluded_prefixes):
+                return False
+        return True
+
+    return False
 
 
 def is_downloadable(url: str) -> bool:
@@ -133,7 +217,6 @@ def fix_url(url: str) -> str:
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def build_session() -> requests.Session:
-    """Return a session with browser-like headers."""
     s = requests.Session()
     s.headers.update({
         "User-Agent": (
@@ -148,10 +231,6 @@ def build_session() -> requests.Session:
 
 
 def fetch_page(session: requests.Session, url: str) -> BeautifulSoup | None:
-    """
-    GET a URL and return BeautifulSoup, or None on any error.
-    Retries up to MAX_RETRIES times with exponential back-off.
-    """
     url = fix_url(url)
     for attempt in range(1, MAX_RETRIES + 1):
         try:
@@ -167,7 +246,7 @@ def fetch_page(session: requests.Session, url: str) -> BeautifulSoup | None:
             log.warning("Connection error (%d/%d): %s — %s", attempt, MAX_RETRIES, url, exc)
         except requests.exceptions.HTTPError as exc:
             log.warning("HTTP error: %s — %s", url, exc)
-            return None   # no point retrying 4xx errors
+            return None
         if attempt < MAX_RETRIES:
             time.sleep(REQUEST_DELAY * attempt)
     return None
@@ -179,16 +258,9 @@ def download_file(
     dest_path: Path,
     dry_run: bool = False,
 ) -> bool:
-    """
-    Download `url` to `dest_path`.
-    • If URL is a .zip, the archive is extracted into dest_path's parent folder.
-    • Skips if the file (or the extracted folder) already exists and is non-empty.
-    • Returns True on success or skip, False on failure.
-    """
-    url = fix_url(url)
+    url    = fix_url(url)
     is_zip = url.lower().endswith((".zip", ".rar"))
 
-    # Already done?
     if is_zip:
         if dest_path.parent.exists() and any(dest_path.parent.iterdir()):
             log.debug("Already extracted, skipping: %s", dest_path.parent)
@@ -208,7 +280,6 @@ def download_file(
             r = session.get(url, timeout=TIMEOUT, stream=True)
             r.raise_for_status()
             content = r.content
-
             if is_zip:
                 _extract_zip(content, dest_path.parent, url)
             else:
@@ -216,14 +287,13 @@ def download_file(
                     f.write(content)
             log.info("✓  %s", dest_path)
             return True
-
         except requests.exceptions.Timeout:
             log.warning("Timeout on attempt %d/%d: %s", attempt, MAX_RETRIES, url)
         except requests.exceptions.HTTPError as exc:
             code = exc.response.status_code
             log.warning("HTTP %d: %s", code, url)
             if code in (403, 404):
-                return False   # no retry for auth/not-found errors
+                return False
         except OSError as exc:
             log.error("File write error: %s — %s", dest_path, exc)
             return False
@@ -234,22 +304,35 @@ def download_file(
             time.sleep(REQUEST_DELAY * attempt)
 
     if dest_path.exists():
-        dest_path.unlink()   # clean up partial file
+        dest_path.unlink()
     return False
 
 
 def _extract_zip(data: bytes, dest_dir: Path, source_url: str):
-    """Extract a ZIP archive into dest_dir. Falls back to raw save for bad ZIPs."""
     try:
         with zipfile.ZipFile(BytesIO(data)) as z:
-            z.extractall(dest_dir)
+            with tempfile.TemporaryDirectory() as tmp_dir:
+                tmp_path = Path(tmp_dir)
+                z.extractall(tmp_path)
+                
+                extracted_items = list(tmp_path.iterdir())
+                
+                dest_dir.mkdir(parents=True, exist_ok=True)
+                
+                if len(extracted_items) == 1 and extracted_items[0].is_dir():
+                    for item in extracted_items[0].iterdir():
+                        shutil.move(str(item), str(dest_dir / item.name))
+                else:
+                    for item in extracted_items:
+                        shutil.move(str(item), str(dest_dir / item.name))
+                        
         log.info("✓  ZIP extracted → %s", dest_dir)
     except zipfile.BadZipFile:
         fname = safe_filename(source_url) or "download.bin"
+        dest_dir.mkdir(parents=True, exist_ok=True)
         with open(dest_dir / fname, "wb") as f:
             f.write(data)
         log.warning("Bad ZIP saved raw: %s", dest_dir / fname)
-
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # PATH BUILDER
@@ -262,10 +345,6 @@ def dest_for(
     file_kind: str,    # "Question_Paper" or "Marking_Scheme"
     filename: str,
 ) -> Path:
-    """
-    Build the full destination path, e.g.:
-      CBSE_Papers/Mathematics/2024/Main/Question_Paper/Mathematics_Standard.zip
-    """
     return BASE_OUTPUT_DIR / subject / str(year) / paper_type / file_kind / filename
 
 
@@ -273,14 +352,19 @@ def dest_for(
 # SOURCE A — cbse.gov.in/cbsenew  (2022–2026)
 # ═══════════════════════════════════════════════════════════════════════════════
 #
-# Both QP and MS pages contain HTML tables like:
-#   <h2>Question Paper for Class X Examination 2025</h2>
-#   <table>
-#     <tr><td>MATHEMATICS STANDARD</td><td><a href=".../2025/X/041_Mathematics_Standard.zip">Download</a></td>...
-#   </table>
+# FIX — Compartment Marking Schemes (Issue 2):
+# ─────────────────────────────────────────────
+# The original code only updated `current_exam` inside heading tags when it
+# encountered the word "compartment". However, the MS page uses headings like:
 #
-# Compartment rows are under headings containing "Compartment" and use
-# year suffixes like "2025-COMPTT" in the URL path.
+#   "Answer Key / Marking Scheme for Compartment Examination 2024"
+#   "Marking Scheme (Compartment) Class X 2023"
+#
+# …which the old regex never matched because it only looked for "compartment"
+# inside headings that also contained a 4-digit year. We now detect compartment
+# context from ANY heading or section-divider tag (h2/h3/h4/strong/b) that
+# mentions "compartment", regardless of whether it also contains a year.
+# The year-scope flag is updated independently, so both can be set correctly.
 
 def _parse_new_site_page(
     soup: BeautifulSoup,
@@ -294,33 +378,52 @@ def _parse_new_site_page(
     if soup is None:
         return []
 
-    results = []
+    results      = []
     current_class = None    # "X" | "XII" | None
     current_exam  = "Main"  # "Main" | "Compartment"
     year_in_scope = False
 
+    # Broaden the tag set: include <strong> and <b> as section dividers because
+    # some CBSE pages use bold inline text instead of heading tags to label
+    # compartment sections.
+    HEADING_TAGS = {"h2", "h3", "h4", "strong", "b"}
+
     for tag in soup.find_all(True):
         name = tag.name
-        if name not in ("h2", "h3", "h4", "tr"):
+        if name not in HEADING_TAGS and name != "tr":
             continue
 
         text = tag.get_text(separator=" ", strip=True)
         tl   = text.lower()
 
-        # ── Heading: detect class and year context ──────────────────────────
-        if name in ("h2", "h3", "h4"):
-            # Reset scope whenever we see a different year
-            if re.search(r"\b20\d\d\b", text):
-                found_year = int(re.search(r"\b(20\d\d)\b", text).group(1))
+        # ── Heading / section-divider logic ────────────────────────────────
+        if name in HEADING_TAGS:
+            # --- Year detection ---
+            year_match = re.search(r"\b(20\d{2})\b", text)
+            if year_match:
+                found_year    = int(year_match.group(1))
                 year_in_scope = (found_year == target_year)
-                current_exam  = "Compartment" if "compartment" in tl else "Main"
-            if "class x " in tl or "class x\n" in tl or tl.endswith("class x"):
+
+            # --- Exam-type detection (independent of year presence) ---
+            # Any heading mentioning "compartment" switches context; any heading
+            # mentioning "examination" WITHOUT "compartment" resets to Main.
+            # This correctly handles both:
+            #   "Marking Scheme Compartment 2024"  → Compartment
+            #   "Question Paper Examination 2024"  → Main
+            if "compartment" in tl:
+                current_exam = "Compartment"
+            elif any(kw in tl for kw in ("examination", "question paper", "marking scheme", "answer key")):
+                # Only reset to Main if the heading doesn't also say compartment
+                current_exam = "Main"
+
+            # --- Class detection ---
+            if re.search(r"\bclass\s*x\b(?!\s*i)", tl):   # "class x" but not "class xi/xii"
                 current_class = "X"
-            elif "class xii" in tl:
+            elif re.search(r"\bclass\s*x(ii|i)\b", tl):
                 current_class = "XII"
             continue
 
-        # ── Table row: only process Class X rows in scope ──────────────────
+        # ── Table row processing ────────────────────────────────────────────
         if not year_in_scope or current_class != "X":
             continue
 
@@ -334,16 +437,21 @@ def _parse_new_site_page(
             href    = a["href"].strip()
             abs_url = urljoin(base_url, href) if not href.startswith("http") else href
 
-            # Class X URLs contain "/X/" in the path
             if "/X/" not in abs_url and "/x/" not in abs_url.lower():
                 continue
             if not is_downloadable(abs_url):
                 continue
 
+            # Re-check exam type from the URL itself as a safety net:
+            # CBSE compartment files typically contain "COMPTT" in the path.
+            url_exam = current_exam
+            if "comptt" in abs_url.lower() or "compartment" in abs_url.lower():
+                url_exam = "Compartment"
+
             results.append({
                 "subject_text": subject_text,
                 "url": abs_url,
-                "exam_type": current_exam,
+                "exam_type": url_exam,
             })
 
     return results
@@ -371,7 +479,7 @@ def scrape_source_a(
 
         for subject in subjects:
             for row in qp_rows:
-                if not subject_matches(subject, row["subject_text"]):
+                if not subject_matches(subject, row["subject_text"], row["url"]):
                     continue
                 fname = safe_filename(row["url"])
                 dest  = dest_for(subject, year, row["exam_type"], "Question_Paper", fname)
@@ -380,7 +488,7 @@ def scrape_source_a(
                 time.sleep(REQUEST_DELAY)
 
             for row in ms_rows:
-                if not subject_matches(subject, row["subject_text"]):
+                if not subject_matches(subject, row["subject_text"], row["url"]):
                     continue
                 fname = safe_filename(row["url"])
                 dest  = dest_for(subject, year, row["exam_type"], "Marking_Scheme", fname)
@@ -393,49 +501,95 @@ def scrape_source_a(
 # SOURCE B — cbse.gov.in/newsite_old  (2013–2021)
 # ═══════════════════════════════════════════════════════════════════════════════
 #
-# Hub page (examination.html) lists links like:
-#   Question Papers for Examination 2020: [Class X link] | [Class XII link]
-#   Marking Scheme for Examination 2020:  [Class X link] | [Class XII link]
-#   (plus Compartment variants)
+# FIX — Compartment Marking Schemes (Issue 2):
+# ─────────────────────────────────────────────
+# The old code classified links using a single `if "qp" in href` check, which
+# meant many compartment MS links (whose hrefs contain neither "qp" nor "ms"
+# explicitly) defaulted silently to qp_comptt and overwrote the real QP URL,
+# or were dropped entirely.
 #
-# Class X sub-pages are flat lists of  <a href="...pdf/zip">SUBJECT</a>.
+# New approach: scan the link's TEXT first (which is the most reliable signal
+# since CBSE labels it "Marking Scheme" or "Answer Key"), then fall back to
+# href keywords, then fall back to sibling-text context.
+
+def _classify_link(href: str, link_text: str, parent_text: str) -> tuple[str, str]:
+    """
+    Return (exam_type, file_kind) for a hub-page link.
+    exam_type : "Main" | "Compartment"
+    file_kind : "Question_Paper" | "Marking_Scheme"
+    """
+    hl  = href.lower()
+    tl  = link_text.lower()
+    pl  = parent_text.lower()
+
+    # ── exam type ───────────────────────────────────────────────────────────
+    is_comptt = (
+        "comptt" in hl
+        or "compartment" in hl
+        or "compartment" in tl
+        or "compartment" in pl
+    )
+    exam_type = "Compartment" if is_comptt else "Main"
+
+    # ── file kind ───────────────────────────────────────────────────────────
+    # Check link text first — it is the most explicit signal.
+    if any(kw in tl for kw in ("marking scheme", "answer key", "ms")):
+        file_kind = "Marking_Scheme"
+    elif any(kw in tl for kw in ("question paper", "qp")):
+        file_kind = "Question_Paper"
+    # Fall back to href keywords
+    elif any(kw in hl for kw in ("ms10", "ms-10", "/ms/")):
+        file_kind = "Marking_Scheme"
+    elif any(kw in hl for kw in ("qp10", "qp-10", "/qp/")):
+        file_kind = "Question_Paper"
+    # Fall back to surrounding paragraph text
+    elif any(kw in pl for kw in ("marking scheme", "answer key")):
+        file_kind = "Marking_Scheme"
+    else:
+        file_kind = "Question_Paper"   # conservative default
+
+    return exam_type, file_kind
+
 
 def _old_site_year_urls(soup: BeautifulSoup, year: int) -> dict:
     """
-    Parse the hub page for a given year and return a dict of
-    {role: url}  where role is one of:
-      qp_main, ms_main, qp_comptt, ms_comptt
+    Parse the hub page for a given year.
+    Returns a dict keyed by  "<exam_type>_<file_kind>"  →  URL, e.g.:
+      {"Main_Question_Paper": "...", "Compartment_Marking_Scheme": "...", ...}
     """
-    urls = {}
+    urls: dict[str, str] = {}
     if soup is None:
         return urls
 
     for a in soup.find_all("a", href=True):
         href = a["href"].strip()
-        txt  = a.get_text(strip=True).lower()
-        # Only Class X links whose href contains the year
         if str(year) not in href:
             continue
-        # Must be Class X (not XII) — look at sibling text context
+
+        # Skip Class XII links
         parent_text = normalize(a.parent.get_text(separator=" "))
         if "class xii" in parent_text or "class 12" in parent_text:
             continue
-        if "class x" not in parent_text and "class-x" not in parent_text:
-            # Try the href itself: qp10-2019 → Class X
-            if "10-" not in href and "qp10" not in href and "ms10" not in href:
-                continue
+        # Must look like a Class X link
+        is_class_x = (
+            "class x" in parent_text
+            or "class-x" in parent_text
+            or "10-" in href
+            or "qp10" in href.lower()
+            or "ms10" in href.lower()
+        )
+        if not is_class_x:
+            continue
 
-        abs_url = urljoin(OLD_SITE_HUB, href)
-        if "comptt" in href.lower() or "compartment" in href.lower():
-            if "qp" in href.lower() or "question" in txt:
-                urls["qp_comptt"] = abs_url
-            else:
-                urls["ms_comptt"] = abs_url
-        else:
-            if "qp" in href.lower() or "question" in txt:
-                urls["qp_main"] = abs_url
-            else:
-                urls["ms_main"] = abs_url
+        abs_url   = urljoin(OLD_SITE_HUB, href)
+        link_text = a.get_text(strip=True)
+        exam_type, file_kind = _classify_link(href, link_text, parent_text)
+        key = f"{exam_type}_{file_kind}"
+
+        # Keep the first match for each key (most prominent link wins)
+        if key not in urls:
+            urls[key] = abs_url
+            log.debug("  Hub link  %-35s → %s", key, abs_url)
 
     return urls
 
@@ -445,10 +599,6 @@ def _parse_old_sub_page(
     base_url: str,
     subjects: list[str],
 ) -> list[dict]:
-    """
-    Old sub-pages are simple lists of <a href=".pdf/.zip">SUBJECT</a>.
-    Returns list of {subject, url}.
-    """
     results = []
     if soup is None:
         return results
@@ -459,7 +609,7 @@ def _parse_old_sub_page(
         if not is_downloadable(abs_url):
             continue
         for subject in subjects:
-            if subject_matches(subject, subject_text):
+            if subject_matches(subject, subject_text, abs_url):
                 results.append({"subject": subject, "url": abs_url})
     return results
 
@@ -479,32 +629,35 @@ def scrape_source_b(
         log.info("  ── Year %d", year)
 
         year_urls = _old_site_year_urls(hub_soup, year)
+
         if not year_urls:
-            # Fallback: construct URLs directly using the known pattern
+            # Fallback: construct URLs using the known CBSE path pattern
             year_urls = {
-                "qp_main":   f"https://www.cbse.gov.in/curric~1/qpms{year}/qp10-{year}.html",
-                "ms_main":   f"https://www.cbse.gov.in/curric~1/qpms{year}/ms10-{year}.html",
-                "qp_comptt": f"https://www.cbse.gov.in/curric~1/qpms{year}/comptt/qp10-{year}.html",
-                "ms_comptt": f"https://www.cbse.gov.in/curric~1/qpms{year}/comptt/ms10-{year}.html",
+                "Main_Question_Paper":        f"https://www.cbse.gov.in/curric~1/qpms{year}/qp10-{year}.html",
+                "Main_Marking_Scheme":        f"https://www.cbse.gov.in/curric~1/qpms{year}/ms10-{year}.html",
+                "Compartment_Question_Paper": f"https://www.cbse.gov.in/curric~1/qpms{year}/comptt/qp10-{year}.html",
+                "Compartment_Marking_Scheme": f"https://www.cbse.gov.in/curric~1/qpms{year}/comptt/ms10-{year}.html",
             }
 
+        # Map new key format → (paper_type, file_kind) folder names
         role_map = {
-            "qp_main":   ("Main",        "Question_Paper"),
-            "ms_main":   ("Main",        "Marking_Scheme"),
-            "qp_comptt": ("Compartment", "Question_Paper"),
-            "ms_comptt": ("Compartment", "Marking_Scheme"),
+            "Main_Question_Paper":        ("Main",        "Question_Paper"),
+            "Main_Marking_Scheme":        ("Main",        "Marking_Scheme"),
+            "Compartment_Question_Paper": ("Compartment", "Question_Paper"),
+            "Compartment_Marking_Scheme": ("Compartment", "Marking_Scheme"),
         }
 
-        for role, (exam_type, file_kind) in role_map.items():
-            url = year_urls.get(role)
+        for key, (paper_type, file_kind) in role_map.items():
+            url = year_urls.get(key)
             if not url:
+                log.debug("  No URL for %s %d", key, year)
                 continue
             soup = fetch_page(session, url);  time.sleep(REQUEST_DELAY)
             rows = _parse_old_sub_page(soup, url, subjects)
-            log.info("     %s/%s: %d links", exam_type, file_kind, len(rows))
+            log.info("     %s: %d links", key, len(rows))
             for row in rows:
                 fname = safe_filename(row["url"])
-                dest  = dest_for(row["subject"], year, exam_type, file_kind, fname)
+                dest  = dest_for(row["subject"], year, paper_type, file_kind, fname)
                 ok    = download_file(session, row["url"], dest, dry_run)
                 stats["downloaded" if ok else "failed"] += 1
                 time.sleep(REQUEST_DELAY)
@@ -513,16 +666,9 @@ def scrape_source_b(
 # ═══════════════════════════════════════════════════════════════════════════════
 # SOURCE C — cbseacademic.nic.in  Sample Papers (SQP + MS)  2014–2026
 # ═══════════════════════════════════════════════════════════════════════════════
-#
-# sqp_archive.html lists year-specific pages like:
-#   SQP 2024-2025 → SQP_CLASSX_2024-25.html
-#   SQP 2018-2019 → SQP_CLASSX_2018_19.html
-#
-# Each year page has a table:  Subject | SQP link | MS link
 
 def _sqp_page_url(exam_year: int) -> str:
-    """Return the SQP Class X URL for the examination year."""
-    prev = exam_year - 1
+    prev  = exam_year - 1
     short = str(exam_year)[2:]
     if exam_year >= 2022:
         return f"https://cbseacademic.nic.in/SQP_CLASSX_{prev}-{short}.html"
@@ -534,10 +680,6 @@ def _parse_sqp_page(
     base_url: str,
     subjects: list[str],
 ) -> list[dict]:
-    """
-    SQP pages contain Subject | SQP link | MS link tables.
-    Returns list of {subject, sqp_url, ms_url}.
-    """
     results = []
     if soup is None:
         return results
@@ -561,7 +703,6 @@ def _parse_sqp_page(
             elif "SQP" in txt or "QP" in txt:
                 sqp_url_found = abs_url
             else:
-                # Position-based: first = SQP, second = MS
                 if sqp_url_found is None:
                     sqp_url_found = abs_url
                 else:
@@ -573,9 +714,9 @@ def _parse_sqp_page(
         for subject in subjects:
             if subject_matches(subject, subject_text):
                 results.append({
-                    "subject":   subject,
-                    "sqp_url":   sqp_url_found,
-                    "ms_url":    ms_url_found,
+                    "subject": subject,
+                    "sqp_url": sqp_url_found,
+                    "ms_url":  ms_url_found,
                 })
 
     return results
@@ -604,7 +745,6 @@ def scrape_source_c(
 
         for row in rows:
             subject = row["subject"]
-
             if row["sqp_url"]:
                 fname = safe_filename(row["sqp_url"])
                 dest  = dest_for(subject, year, "Sample_Paper", "Question_Paper", fname)
@@ -629,7 +769,7 @@ def run(years: list[int], subjects: list[str], dry_run: bool) -> dict:
     stats   = {"downloaded": 0, "failed": 0}
 
     log.info("╔══════════════════════════════════════════════════════════╗")
-    log.info("   CBSE Class 10 Paper Downloader  — starting")
+    log.info("   CBSE Class 10 Paper Downloader  v3.0 — starting")
     log.info("   Years   : %s → %s", min(years), max(years))
     log.info("   Subjects: %s", ", ".join(subjects))
     log.info("   Output  : %s", BASE_OUTPUT_DIR.resolve())
@@ -660,7 +800,7 @@ def parse_args():
     p.add_argument("--subjects", nargs="+",
                    choices=list(SUBJECTS.keys()),
                    default=list(SUBJECTS.keys()),
-                   help="Subjects (default: all 6)")
+                   help="Subjects (default: all)")
     p.add_argument("--output", type=Path, default=BASE_OUTPUT_DIR,
                    help="Root output folder (default: CBSE_Papers/)")
     p.add_argument("--dry-run", action="store_true",
