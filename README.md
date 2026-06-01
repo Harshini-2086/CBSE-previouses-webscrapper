@@ -38,12 +38,9 @@ cbse_downloader/
 ├── download_summary.json  ← machine-readable stats (auto-created)
 ├── venv/
 └── CBSE_Papers/           ← all downloaded PDFs live here
-    ├── Mathematics/
+    ├── Mathematics Standard/
     │   ├── 2024/
-    │   │   ├── Set_1/
-    │   │   │   ├── Question_Paper.pdf
-    │   │   │   └── Marking_Scheme.pdf
-    │   │   ├── Set_2/
+    │   │   ├── Main/
     │   │   │   ├── Question_Paper.pdf
     │   │   │   └── Marking_Scheme.pdf
     │   │   └── Compartment/
@@ -53,6 +50,7 @@ cbse_downloader/
     │       └── ...
     ├── Science/
     │   └── ...
+    ├── Mathematics Standard/
     ├── English/
     ├── Social_Studies/
     ├── Information_Technology/
@@ -72,10 +70,7 @@ cbse_downloader/
 ### Install Python (if missing)
 
 - **Windows**: Download from [python.org/downloads](https://www.python.org/downloads/).
-  During installation, ✅ check **"Add Python to PATH"**.
-- **macOS**: `brew install python` (requires [Homebrew](https://brew.sh)) or download from python.org.
-- **Linux (Debian/Ubuntu)**: `sudo apt update && sudo apt install python3 python3-pip python3-venv`
-
+  During installation, check **"Add Python to PATH"**.
 ---
 
 ## 3. Installation (step-by-step)
@@ -127,7 +122,7 @@ venv\Scripts\Activate.ps1
 source venv/bin/activate
 ```
 
-✅ **You'll know it worked** when your terminal prompt changes to show `(venv)`:
+**You'll know it worked** when your terminal prompt changes to show `(venv)`:
 ```
 (venv) C:\cbse_downloader>   ← Windows example
 (venv) user@mac cbse_downloader %   ← macOS example
@@ -155,16 +150,13 @@ This installs:
 
 ## 4. The Python Script — Annotated Overview
 
-Here is a section-by-section explanation of what `cbse_scraper.py` does.
-
 ### 4a. Configuration block (top of file)
 ```python
-START_YEAR = 2010
+START_YEAR = 2016
 END_YEAR   = 2025
 REQUEST_DELAY = 1.5   # seconds between requests — be polite to the server
 MAX_RETRIES   = 3     # retry failed downloads up to 3 times
 ```
-You can edit these numbers directly if you need fewer years or more retries.
 
 ### 4b. SUBJECTS dictionary
 ```python
@@ -367,14 +359,4 @@ CAPTCHA) instead of the actual PDF.
 
 ---
 
-## 8. Ethical & Legal Note
-
-- This script downloads **publicly available** materials from an **official
-  government education portal** for **personal study use only**.
-- It inserts a **polite delay** between requests to avoid overloading the
-  server.
-- Do **not** redistribute downloaded papers commercially or claim ownership.
-- If CBSE requests robots.txt compliance, check `cbseacademic.nic.in/robots.txt`
-  before running.
-- Use responsibly. 🙏
 # CBSE-previouses-webscrapper
