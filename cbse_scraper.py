@@ -162,10 +162,10 @@ def normalize(s: str) -> str:
 
 #     return False
 
-def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
+def subject_matches(subject_key: str, text: str, url: str = "", year: int = None) -> bool:
     """
     Return True when the given text (and optionally the file URL) belongs to
-    `subject_key`. Filters out non-English languages and specialized exam versions.
+    `subject_key`. Maps pre-2020 generic Mathematics to Mathematics_Standard.
     """
     cfg  = SUBJECTS[subject_key]
     code = cfg["code"]
@@ -175,16 +175,20 @@ def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
     norm_url  = normalize(urlparse(url).path) if url else ""
 
     # ── Language & Special Version Filter ───────────────────────────────────
-    # Define keywords for versions we want to completely skip
     excluded_keywords = ["blind", "vi candidate", "visually", "urdu", "punjabi", "sanskrit", "bengali"]
-    
-    # Only allow the word "hindi" if we are explicitly looking for Hindi Course-B
     if subject_key != "Hindi_Course_B":
         excluded_keywords.append("hindi")
-
-    # If any exclusion keyword appears in the text or the URL, reject the file
     if any(kw in norm_text or kw in norm_url for kw in excluded_keywords):
         return False
+
+    # ── Pre-2020 Mathematics Routing ──────────────────────────────────────
+    if year and year < 2020:
+        if subject_key == "Mathematics_Basic":
+            return False  # Basic did not exist before 2020
+        if subject_key == "Mathematics_Standard":
+            # Prior to 2020, it was just called "Mathematics" or "Maths"
+            if "mathematics" in norm_text or "math" in norm_text:
+                return True
 
     # ── Tier 1: code match ──────────────────────────────────────────────────
     code_pattern = rf"(?<!\d){re.escape(code)}(?!\d)"
@@ -195,11 +199,9 @@ def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
 
     # ── Tier 2: name match (fallback) ───────────────────────────────────────
     norm_name = normalize(name)
-    
     if norm_name in norm_text:
-        # Prevent "Science" from greedily matching other types of science
         if subject_key == "Science":
-            excluded_prefixes = ["social", "home", "data", "computer", "environmental"]
+            excluded_prefixes = ["home", "data", "computer", "environmental","Foundational Skills for"]
             if any(prefix in norm_text for prefix in excluded_prefixes):
                 return False
         return True
@@ -490,7 +492,8 @@ def scrape_source_a(
 
         for subject in subjects:
             for row in qp_rows:
-                if not subject_matches(subject, row["subject_text"], row["url"]):
+                # Inside the QP loop
+                if not subject_matches(subject, row["subject_text"], row["url"], year=year):
                     continue
                 fname = safe_filename(row["url"])
                 dest  = dest_for(subject, year, row["exam_type"], "Question_Paper", fname)
@@ -499,7 +502,8 @@ def scrape_source_a(
                 time.sleep(REQUEST_DELAY)
 
             for row in ms_rows:
-                if not subject_matches(subject, row["subject_text"], row["url"]):
+                # Inside the MS loop
+                if not subject_matches(subject, row["subject_text"], row["url"], year=year):
                     continue
                 fname = safe_filename(row["url"])
                 dest  = dest_for(subject, year, row["exam_type"], "Marking_Scheme", fname)
@@ -605,11 +609,8 @@ def _old_site_year_urls(soup: BeautifulSoup, year: int) -> dict:
     return urls
 
 
-def _parse_old_sub_page(
-    soup: BeautifulSoup,
-    base_url: str,
-    subjects: list[str],
-) -> list[dict]:
+def _parse_old_sub_page(soup: BeautifulSoup, base_url: str, subjects: list[str], year: int) -> list[dict]:
+    # ... inside the loop ...
     results = []
     if soup is None:
         return results
@@ -620,7 +621,7 @@ def _parse_old_sub_page(
         if not is_downloadable(abs_url):
             continue
         for subject in subjects:
-            if subject_matches(subject, subject_text, abs_url):
+            if subject_matches(subject, subject_text, abs_url, year=year):
                 results.append({"subject": subject, "url": abs_url})
     return results
 
@@ -664,7 +665,7 @@ def scrape_source_b(
                 log.debug("  No URL for %s %d", key, year)
                 continue
             soup = fetch_page(session, url);  time.sleep(REQUEST_DELAY)
-            rows = _parse_old_sub_page(soup, url, subjects)
+            rows = _parse_old_sub_page(soup, url, subjects, year=year)
             log.info("     %s: %d links", key, len(rows))
             for row in rows:
                 fname = safe_filename(row["url"])
@@ -686,11 +687,7 @@ def _sqp_page_url(exam_year: int) -> str:
     return f"https://cbseacademic.nic.in/SQP_CLASSX_{prev}_{short}.html"
 
 
-def _parse_sqp_page(
-    soup: BeautifulSoup,
-    base_url: str,
-    subjects: list[str],
-) -> list[dict]:
+def _parse_sqp_page(soup: BeautifulSoup, base_url: str, subjects: list[str], year: int) -> list[dict]:
     results = []
     if soup is None:
         return results
@@ -723,7 +720,7 @@ def _parse_sqp_page(
             continue
 
         for subject in subjects:
-            if subject_matches(subject, subject_text):
+            if subject_matches(subject, subject_text, year=year):
                 results.append({
                     "subject": subject,
                     "sqp_url": sqp_url_found,
@@ -751,7 +748,7 @@ def scrape_source_c(
             log.warning("     No SQP page found for %d", year)
             continue
 
-        rows = _parse_sqp_page(soup, url, subjects)
+        rows = _parse_sqp_page(soup, url, subjects, year=year)
         log.info("     Found %d subject rows", len(rows))
 
         for row in rows:
