@@ -165,35 +165,46 @@ def normalize(s: str) -> str:
 def subject_matches(subject_key: str, text: str, url: str = "") -> bool:
     """
     Return True when the given text (and optionally the file URL) belongs to
-    `subject_key`.
+    `subject_key`. Filters out non-English languages and specialized exam versions.
     """
     cfg  = SUBJECTS[subject_key]
     code = cfg["code"]
     name = cfg["name"]
 
+    norm_text = normalize(text)
+    norm_url  = normalize(urlparse(url).path) if url else ""
+
+    # ── Language & Special Version Filter ───────────────────────────────────
+    # Define keywords for versions we want to completely skip
+    excluded_keywords = ["blind", "vi candidate", "visually", "urdu", "punjabi", "sanskrit", "bengali"]
+    
+    # Only allow the word "hindi" if we are explicitly looking for Hindi Course-B
+    if subject_key != "Hindi_Course_B":
+        excluded_keywords.append("hindi")
+
+    # If any exclusion keyword appears in the text or the URL, reject the file
+    if any(kw in norm_text or kw in norm_url for kw in excluded_keywords):
+        return False
+
     # ── Tier 1: code match ──────────────────────────────────────────────────
-    # Check in display text
     code_pattern = rf"(?<!\d){re.escape(code)}(?!\d)"
     if re.search(code_pattern, text):
         return True
-    # Check in URL path (e.g. "041_Mathematics_Standard.zip")
     if url and re.search(code_pattern, urlparse(url).path):
         return True
 
     # ── Tier 2: name match (fallback) ───────────────────────────────────────
-    norm_text = normalize(text)
     norm_name = normalize(name)
     
     if norm_name in norm_text:
         # Prevent "Science" from greedily matching other types of science
         if subject_key == "Science":
-            excluded_prefixes = ["home", "data", "computer", "environmental","Foundational Skills for"]
+            excluded_prefixes = ["social", "home", "data", "computer", "environmental"]
             if any(prefix in norm_text for prefix in excluded_prefixes):
                 return False
         return True
 
     return False
-
 
 def is_downloadable(url: str) -> bool:
     """True for .pdf, .zip, .rar URLs."""
